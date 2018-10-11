@@ -1,5 +1,5 @@
 # Tic-Tac-Toe-App
-A Tic-tac-toe application using ReactJS
+### A Tic-tac-toe application using ReactJS
 
 ## To run the app
 1. Install [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm).
