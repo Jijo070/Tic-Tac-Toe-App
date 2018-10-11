@@ -1,0 +1,57 @@
+body{
+  background: beige;
+}
+
+.container{
+  text-align: center;
+}
+
+.box{
+
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+  display: inline-block;
+  line-height: 80px;
+
+}
+
+.board{
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 246px;
+}
+
+form{
+  margin-bottom: 6px;
+}
+
+form label{
+  margin-right: 8px;
+}
+
+button, input[type="submit" i] {
+  border-color: rgb(60, 60, 55);
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 7px 2px;
+  background: lightgrey;
+}
+
+.btn{
+  text-align: center;
+}
+
+.reset{
+  display: inline-block;
+  margin: auto;
+  width: 60px;
+  margin-top: 8px;
+}
+
+.divider{
+    width: 18px;
+    height:auto;
+    display:inline-block;
+}
+
