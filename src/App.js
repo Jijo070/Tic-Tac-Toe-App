@@ -7,6 +7,7 @@ import GameStatus from'./components/GameStatus';
 
 class App extends Component {
 
+
   constructor(props){
 
     super(props)
@@ -20,6 +21,7 @@ class App extends Component {
       /* array to store the ndex */
       order_ndex : []
     }
+
   }
 
   checkWinner(){
@@ -59,7 +61,13 @@ class App extends Component {
 
   handleClick(index){
 
-    if(this.state.player && !this.state.winner){
+    const images ={
+      connery : require('./images/connery.svg'),
+      square : require('./images/square.svg')
+    }
+
+
+    if(this.state.player && !this.state.winner && this.state.gamemode === "Classic"){
 
       let newBoard = this.state.board
 
@@ -76,6 +84,26 @@ class App extends Component {
         this.checkWinner()
 
       }
+    }
+
+    else{
+
+      let newBoard = this.state.board
+
+      if(this.state.board[index]===null){
+
+        newBoard[index] = this.state.player
+        /* push the last index into the array */
+        this.state.order_ndex.push(index) 
+        this.setState({
+          board: newBoard,
+          player: this.state.player=== images.connery ? images.square : images.connery
+        })
+
+        this.checkWinner()
+
+      }
+
     }
   } 
 
@@ -159,6 +187,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
