@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import './App.css';
 
 import Status from'./components/Status';
+import GameStatus from'./components/GameStatus';
 
 class App extends Component {
 
@@ -16,8 +16,9 @@ class App extends Component {
       board : Array(9).fill(null),
       player : null,
       winner : null,
+      gamemode : null,
       /* array to store the ndex */
-      order_ndex : Array()
+      order_ndex : []
     }
   }
 
@@ -39,25 +40,20 @@ class App extends Component {
   }
 
   checkmatch(winLines){
+    let board = this.state.board;
     for (let index = 0; index < winLines.length; index++) {
       const [a,b,c]=winLines[index];
-      let board = this.state.board;
       if(board[a] && board[a] === board[b] && board[a] === board[c] ){
         alert('You won!');
         this.setState({
           winner : this.state.player
         })
+        this.state.winner = this.state.player;
       }
-      else if(!this.state.winner && !board.includes(null) && board[a] === board[b] && board[a] === board[c]){
-        alert('You won!');
-        this.setState({
-          winner : this.state.player
-        })
-      }
-      else if(!this.state.winner && !board.includes(null) && board[a] !== board[b] && board[a] !== board[c]){
-        alert('Its a Draw!');
-        break;
-      }
+    }
+    if(!this.state.winner && !board.includes(null)){
+      this.state.winner = 'None';
+      alert('Its a Draw!');
     }
   }
 
@@ -88,6 +84,12 @@ class App extends Component {
 
   }
 
+  setGameMode(gamemode){
+    console.log(gamemode)
+    this.setState({gamemode})
+
+  }
+
   renderBoxes(){
     return this.state.board.map(
       (box, index) => 
@@ -103,7 +105,9 @@ class App extends Component {
     this.setState({
       board : Array(9).fill(null),
       player :  null,
-      winner : null
+      winner : null,
+      gamemode : null,
+      order_ndex : []
 
     })
 
@@ -122,13 +126,18 @@ class App extends Component {
 
   render() {
 
+
     return (
       
       <div className="container">
         <h1>Tic Tac Toe App</h1>
 
-        <Status
+        <GameStatus 
           gamemode ={this.state.gamemode} 
+          setGameMode = {(e)=> this.setGameMode(e)}
+        />
+
+        <Status
           player={this.state.player} 
           setPlayer={(e) => this.setPlayer(e)}
           winner = {this.state.winner}
@@ -141,8 +150,8 @@ class App extends Component {
         </div>
         <div className="btn">
           <button className='reset' onClick = {() => this.reset()}> Reset </button>
-          <div class="divider"/>
-          <button className='reset' onClick = {() => this.undo()}> Undo </button>
+          <div className="divider"/>
+          <button className='reset' disabled ={this.state.winner} onClick = {() => this.undo()}> Undo </button>
         </div>
 
       </div>
@@ -151,10 +160,5 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  undoRedo: PropTypes.object.isRequired, 
-  val: PropTypes.string.isRequired,
-  update: PropTypes.func.isRequired,
-};
 
 export default App;

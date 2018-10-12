@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import ChooseGameMode from'./ChooseGameMode';
-
 class Player extends Component{
 
 	handleForm(e){
