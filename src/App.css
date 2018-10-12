@@ -13,7 +13,7 @@ body{
   border: 1px solid black;
   display: inline-block;
   line-height: 80px;
-
+  cursor:pointer;
 }
 
 .board{
@@ -36,6 +36,7 @@ button, input[type="submit" i] {
   border-width: 1px;
   padding: 1px 7px 2px;
   background: lightgrey;
+  cursor:pointer;
 }
 
 .btn{
