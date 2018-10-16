@@ -12,7 +12,7 @@ class GameStatus extends Component {
 	render(){
 
 		return (this.props.gamemode ? 
-              <h3>You are playing the {this.props.gamemode} mode</h3> : 
+              <h4>You are playing the {this.props.gamemode} mode</h4> : 
               <ChooseGameMode gamemode={(e) => this.handleSetGameMode(e)} />
         )
 	}
