@@ -5,6 +5,9 @@ import './App.css';
 import Status from'./components/Status';
 import GameStatus from'./components/GameStatus';
 
+const connery = require("./images/connery.svg");
+const square = require("./images/square.svg");
+
 class App extends Component {
 
 
@@ -43,6 +46,7 @@ class App extends Component {
 
   checkmatch(winLines){
     let board = this.state.board;
+    //let newWinner = this.state.winner
     for (let index = 0; index < winLines.length; index++) {
       const [a,b,c]=winLines[index];
       if(board[a] && board[a] === board[b] && board[a] === board[c] ){
@@ -54,20 +58,16 @@ class App extends Component {
       }
     }
     if(!this.state.winner && !board.includes(null)){
-      this.state.winner = 'None';
+      this.setState({
+          winner : "None"
+      })
       alert('Its a Draw!');
     }
   }
 
   handleClick(index){
 
-    const images ={
-      connery : require('./images/connery.svg'),
-      square : require('./images/square.svg')
-    }
-
-
-    if(this.state.player && !this.state.winner && this.state.gamemode === "Classic"){
+    if(this.state.player && !this.state.winner){
 
       let newBoard = this.state.board
 
@@ -85,26 +85,6 @@ class App extends Component {
 
       }
     }
-
-    else{
-
-      let newBoard = this.state.board
-
-      if(this.state.board[index]===null){
-
-        newBoard[index] = this.state.player
-        /* push the last index into the array */
-        this.state.order_ndex.push(index) 
-        this.setState({
-          board: newBoard,
-          player: this.state.player=== images.connery ? images.square : images.connery
-        })
-
-        this.checkWinner()
-
-      }
-
-    }
   } 
 
   setPlayer(player){
@@ -119,13 +99,23 @@ class App extends Component {
   }
 
   renderBoxes(){
+
+    const isFrontend = this.state.gamemode === "Frontenddevlandia";
+
     return this.state.board.map(
-      (box, index) => 
-      <div className="box" key={index} 
-        onClick={()=> {this.handleClick(index)}}>
-        {box}
+      (box, index) => (
+      <div 
+        className="box" 
+        key={index} 
+        onClick={() => {
+          this.handleClick(index);
+        }}
+      >
+        {box === "X" && isFrontend && <img src={connery} />}
+        {box === "O" && isFrontend && <img src={square} />}
+        {!isFrontend && box}
       </div>
-    )
+    ));
   }
 
   reset(){
@@ -177,13 +167,21 @@ class App extends Component {
 
         </div>
         <div className="btn">
-          <button className='reset' onClick = {() => this.reset()}> Reset </button>
+          <button className='reset' onClick = {() => this.reset()}> 
+            {" "}
+            Reset{" "} 
+          </button>
           <div className="divider"/>
-          <button className='reset' disabled ={this.state.winner} onClick = {() => this.undo()}> Undo </button>
+          <button 
+            className='reset' 
+            disabled ={this.state.winner} 
+            onClick = {() => this.undo()}
+          > 
+            {" "}
+            Undo{" "} 
+          </button>
         </div>
-
       </div>
-
     );
   }
 }
