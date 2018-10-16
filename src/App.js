@@ -158,6 +158,7 @@ class App extends Component {
         <Status
           player={this.state.player} 
           setPlayer={(e) => this.setPlayer(e)}
+          gamemode ={this.state.gamemode} 
           winner = {this.state.winner}
         />
 

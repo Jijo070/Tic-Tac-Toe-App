@@ -12,7 +12,7 @@ class ChooseGameMode extends Component{
 			<form onSubmit={(e)=> this.handleForm(e)}>
 				<label>
 					Classic
-					<input type="radio" name="gamemode" checked="checked" value="Classic"/>
+					<input type="radio" name="gamemode" value="Classic"/>
 				</label>
 
 				<label>

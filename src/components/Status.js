@@ -5,15 +5,17 @@ import Player from'./choosePlayer';
 class Status extends Component {
 
 	handleSetPlayer(e){
-		this.props.setPlayer(e)
+		if (this.props.gamemode) {
+			this.props.setPlayer(e)
+		}
 	}
 
 	renderHtml(){
 		if (this.props.winner){
-			return (<h2>Winner is {this.props.winner}</h2>)
+			return (<h5>Winner is {this.props.winner}</h5>)
 		} else {
 			return this.props.player ? 
-	      	<h2>Next player is {this.props.player}</h2> : 
+	      	<h5>Next player is {this.props.player}</h5> : 
 	      	<Player player={(e) => this.handleSetPlayer(e)} />
 		}
 	}
