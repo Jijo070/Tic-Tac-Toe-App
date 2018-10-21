@@ -51,7 +51,6 @@ class App extends Component {
     for (let index = 0; index < winLines.length; index++) {
       const [a,b,c]=winLines[index];
       if(board[a] && board[a] === board[b] && board[a] === board[c] ){
-        //alert('You won!');
         this.setState({
           winner : this.state.player
         })
@@ -62,7 +61,6 @@ class App extends Component {
       this.setState({
           winner : "None"
       })
-      //alert('Its a Draw!');
     }
   }
 
