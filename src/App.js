@@ -27,6 +27,7 @@ class App extends Component {
 
   }
 
+  //Winning conditions
   checkWinner(){
 
     let winLines =
@@ -44,12 +45,13 @@ class App extends Component {
     this.checkmatch(winLines)
   }
 
+  //Checks if the current state matches the winning condition
   checkmatch(winLines){
     let board = this.state.board;
     for (let index = 0; index < winLines.length; index++) {
       const [a,b,c]=winLines[index];
       if(board[a] && board[a] === board[b] && board[a] === board[c] ){
-        alert('You won!');
+        //alert('You won!');
         this.setState({
           winner : this.state.player
         })
@@ -60,7 +62,7 @@ class App extends Component {
       this.setState({
           winner : "None"
       })
-      alert('Its a Draw!');
+      //alert('Its a Draw!');
     }
   }
 
@@ -86,21 +88,22 @@ class App extends Component {
     }
   } 
 
+  //Set the current state of Player
   setPlayer(player){
     this.setState({player})
 
   }
 
+  //Set the current state of the Game mode
   setGameMode(gamemode){
     console.log(gamemode)
     this.setState({gamemode})
 
   }
 
+  //Renders the boxes into DOM
   renderBoxes(){
-
     const isFrontend = this.state.gamemode === "Frontenddevlandia";
-
     return this.state.board.map(
       (box, index) => (
       <div 
@@ -118,14 +121,12 @@ class App extends Component {
   }
 
   reset(){
-
     this.setState({
       board : Array(9).fill(null),
       player :  null,
       winner : null,
       setGameMode : null,
       order_ndex : []
-
     })
 
   } 
@@ -141,8 +142,8 @@ class App extends Component {
     })
   }
 
-  render() {
 
+  render() {
 
     return (
       
