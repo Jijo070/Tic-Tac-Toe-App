@@ -3,26 +3,24 @@ import React, { Component } from 'react';
 class ChooseGameMode extends Component{
 
 	handleForm(e){
-		e.preventDefault();
-		this.props.gamemode(e.target.gamemode.value);
+		this.props.setGamemode(e.target.value);
 	}
 
 	render(){
 		return (
-			<form onSubmit={(e)=> this.handleForm(e)}>
+			<form onChange={this.handleForm.bind(this)}>
 				<label>
 					Classic
-					<input type="radio" name="gamemode" value="Classic"/>
+					<input type="radio" name="gamemode" value="Classic" />
 				</label>
 
 				<label>
 					Frontenddevlandia
-					<input type="radio" name="gamemode" value="Frontenddevlandia"/>
+					<input type="radio" name="gamemode" value="Frontenddevlandia" />
 				</label>
 
-				<input type="submit" value="Submit" />
 			</form>
-		)
+		);
 
 	}
 }

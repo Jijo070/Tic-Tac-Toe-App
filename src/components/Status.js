@@ -5,9 +5,7 @@ import Player from'./choosePlayer';
 class Status extends Component {
 
 	handleSetPlayer(e){
-		if (this.props.gamemode) {
-			this.props.setPlayer(e)
-		}
+		this.props.setPlayer(e)
 	}
 
 	renderHtml(){

@@ -46,7 +46,6 @@ class App extends Component {
 
   checkmatch(winLines){
     let board = this.state.board;
-    //let newWinner = this.state.winner
     for (let index = 0; index < winLines.length; index++) {
       const [a,b,c]=winLines[index];
       if(board[a] && board[a] === board[b] && board[a] === board[c] ){
@@ -124,7 +123,7 @@ class App extends Component {
       board : Array(9).fill(null),
       player :  null,
       winner : null,
-      gamemode : null,
+      setGameMode : null,
       order_ndex : []
 
     })

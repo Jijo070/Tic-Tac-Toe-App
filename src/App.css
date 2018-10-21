@@ -45,6 +45,20 @@ button, input[type="submit" i] {
   cursor:pointer;
 }
 
+button:hover,
+input[type="submit" i]:hover {
+  border: 1px solid #0099cc;
+  background-color: #00aacc;
+  color: #ffffff;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 input[type=checkbox], input[type=radio] {
   margin-left: 4px;
 }
