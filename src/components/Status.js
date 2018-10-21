@@ -10,7 +10,7 @@ class Status extends Component {
 
 	renderHtml(){
 		if (this.props.winner){
-			return (<h5>Winner is {this.props.winner}</h5>)
+			return (<h4>Game Over! Winner is {this.props.winner}</h4>)
 		} else {
 			return this.props.player ? 
 	      	<h5>Next player is {this.props.player}</h5> : 
