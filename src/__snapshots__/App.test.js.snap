@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChooseGameMode /> renders correctly using snapshot 1`] = `
+<form>
+  <label>
+    Classic
+    <input
+      name="gamemode"
+      type="radio"
+      value="Classic"
+    />
+  </label>
+  <label>
+    Frontenddevlandia
+    <input
+      name="gamemode"
+      type="radio"
+      value="Frontenddevlandia"
+    />
+  </label>
+</form>
+`;
+
+exports[`<GameStatus /> renders correctly 1`] = `
+<div>
+  <h3>
+    You are playing the Classic mode
+  </h3>
+  <form>
+    <label>
+      Classic
+      <input
+        name="gamemode"
+        type="radio"
+        value="Classic"
+      />
+    </label>
+    <label>
+      Frontenddevlandia
+      <input
+        name="gamemode"
+        type="radio"
+        value="Frontenddevlandia"
+      />
+    </label>
+  </form>
+</div>
+`;
+
+exports[`<GameStatus /> renders correctly using snapshot 1`] = `
+<div>
+  <h3>
+    You are playing the 
+    Classic
+     mode
+  </h3>
+  <ChooseGameMode
+    gamemode="Classic"
+    setGamemode={[Function]}
+  />
+</div>
+`;
+
+exports[`<Player /> renders correctly using snapshot 1`] = `
+<form>
+  <label>
+    Player X
+    <input
+      name="player"
+      type="radio"
+      value="X"
+    />
+  </label>
+  <label>
+    Player O
+    <input
+      name="player"
+      type="radio"
+      value="O"
+    />
+  </label>
+  <input
+    type="submit"
+    value="Start"
+  />
+</form>
+`;
+
+exports[`<Status /> renders correctly using snapshot 1`] = `
+<span>
+  <form>
+    <label>
+      Player X
+      <input
+        name="player"
+        type="radio"
+        value="X"
+      />
+    </label>
+    <label>
+      Player O
+      <input
+        name="player"
+        type="radio"
+        value="O"
+      />
+    </label>
+    <input
+      type="submit"
+      value="Start"
+    />
+  </form>
+</span>
+`;
