@@ -89,14 +89,11 @@ class App extends Component {
   //Set the current state of Player
   setPlayer(player){
     this.setState({player})
-
   }
 
   //Set the current state of the Game mode
   setGameMode(gamemode){
-    console.log(gamemode)
     this.setState({gamemode})
-
   }
 
   //Renders the boxes into DOM
@@ -111,8 +108,8 @@ class App extends Component {
           this.handleClick(index);
         }}
       >
-        {box === "X" && isFrontend && <img src={connery} />}
-        {box === "O" && isFrontend && <img src={square} />}
+        {box === "X" && isFrontend && <img src={connery} alt="X"/>}
+        {box === "O" && isFrontend && <img src={square} alt="O"/>}
         {!isFrontend && box}
       </div>
     ));
