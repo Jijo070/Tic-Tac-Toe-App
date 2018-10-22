@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://jijo070.github.io/Tic-Tac-Toe-App",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -12,6 +13,8 @@
     "sinon": "^7.0.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
