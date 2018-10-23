@@ -36,3 +36,5 @@ Used [Jest](https://jestjs.io/) that comes pre-configured with create-react-app 
 * [enzyme-to-json](https://www.npmjs.com/package/enzyme-to-json): Let's you customize how Jest serializes snapshots
 * [sinon](https://sinonjs.org/): Spy functions, mocks, and stubs
 
+The application has been successfully tested on all standard web and mobile browsers.
+
