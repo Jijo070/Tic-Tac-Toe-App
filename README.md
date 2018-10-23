@@ -2,7 +2,7 @@
 ### An Online Tic-tac-toe Application Using ReactJS
 
 ## Deployment Link:
-The app has been deployed here: https://jijo070.github.io/Tic-Tac-Toe-App/
+The app has been deployed [here](https://jijo070.github.io/Tic-Tac-Toe-App/).
 
 ## To run the app locally in your machine:
 1. Install [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm).
