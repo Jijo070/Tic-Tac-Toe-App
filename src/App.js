@@ -143,7 +143,7 @@ class App extends Component {
     return (
       
       <div className="container">
-        <h1>Tic Tac Toe App</h1>
+        <h1>Tic Tac Toe</h1>
 
         <GameStatus 
           gamemode ={this.state.gamemode} 
