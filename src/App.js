@@ -5,8 +5,8 @@ import './App.css';
 import Status from'./components/Status';
 import GameStatus from'./components/GameStatus';
 
-const connery = require("./images/connery.svg");
-const square = require("./images/square.svg");
+const connery = require("./images/connery.png");
+const square = require("./images/square.png");
 
 class App extends Component {
 
