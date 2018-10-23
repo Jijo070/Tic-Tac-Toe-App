@@ -1,5 +1,5 @@
 # Tic-Tac-Toe-App
-### An Online Tic-tac-toe Application Using ReactJS
+### An Online Tic-tac-toe Application developed Using ReactJS
 
 ## Deployment Link:
 The app has been deployed [here](https://jijo070.github.io/Tic-Tac-Toe-App/).
