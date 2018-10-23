@@ -7,15 +7,15 @@ The app has been deployed here: https://jijo070.github.io/Tic-Tac-Toe-App/
 ## To run the app locally in your machine:
 1. Install [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm).
 2. Install [yarn](https://yarnpkg.com/lang/en/docs/install/#mac-stable).
-3. Download or clone this repo and replace it with the contents in the folder `tictactoe` in your local machine.
+3. Download or clone this repo to your local machine.
 4. Using terminal in Mac or command prompt in windows, go to the root folder of the app where the `package.json` file is located and type in the command `yarn install` or `npm install` to install all the dependencies for the app.
-5. Type in the command `yarn start`or `npm start` to start the application using your local server.
+5. Type in the command `yarn start`or `npm start` in the terminal or command prompt to start the application using your local server.
 
 ## Steps and Working of the application:
 1. Choose the game mode you want to play as.
 2. Choose the Player you want to play as.
 3. Click start.
-4. Click on the boxes to display the respective characters or images depending on the player and the game mode you choose.
+4. Click on the boxes to display the respective pieces depending on the player and the game mode you choose.
 5. Undo button available to undo a particular move, in between a game untill the game is over.
 6. Reset button to reset the game at anytime during the play.
 7. Hot swapping of pieces available at any given time throughout the game, depending the game mode selection.
